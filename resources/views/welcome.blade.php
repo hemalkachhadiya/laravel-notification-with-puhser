@@ -141,8 +141,8 @@
         var notificationNumber = parseInt($('.notification-number').text());
 
         // Initiate the Pusher JS library
-        var pusher = new Pusher('984f1bed30fbdc406640', {
-            cluster: 'eu',
+        var pusher = new Pusher( "{{ env('PUSHER_APP_KEY') }}", {
+            cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
             forceTLS: true
         });
 

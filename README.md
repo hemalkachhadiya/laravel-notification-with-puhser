@@ -236,8 +236,8 @@ Open the ```welcome.blade.php``` file and replace it with the HTML below.
         var notificationNumber = parseInt($('.notification-number').text());
 
         // Initiate the Pusher JS library
-        var pusher = new Pusher('984f1bed30fbdc406640', {
-            cluster: 'eu',
+        var pusher = new Pusher("{{ env('PUSHER_APP_KEY') }}", {
+            cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
             forceTLS: true
         });
 
@@ -458,4 +458,13 @@ public function sendNotification( Request $request ) {
             200
         );
     }
+```
+
+### Testing
+```base
+Base URL : 
+[ Your Hostname ]/
+
+Send Notification URL :
+[ Your Hostname ]/send-notification
 ```
